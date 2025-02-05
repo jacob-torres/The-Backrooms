@@ -1,5 +1,27 @@
-export default async function Levels({params}) {
-  console.log(params);
-  const levelID = (await params).id;
-  return <div>Level {levelID}</div>
+'use client';
+
+import Link from "next/link";
+import { useState } from "react";
+import { useParams } from "next/navigation";
+
+export default function Levels() {
+
+  // Get level ID from URL params
+  const params = useParams();
+  let levelID = params.id;
+
+  // Set level state
+  const [level, setLevel] = useState(0);
+
+  return (
+    <div>
+      <h1>Level {level}</h1>
+      <button onClick={() => {
+        levelID += 1;
+        setLevel(level + 1);
+      }}>
+        Next Level!
+      </button>
+    </div>
+  );
 }
