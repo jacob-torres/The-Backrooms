@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
         <h1>Welcome to the Backrooms</h1>
         <p>Congratulations! Or should I say my condolences?</p>
           <p>If you're here, it means you've no-clipped into The Backrooms.</p>
+          <button>
+            <Link href="/levels/0/">Start Exploring!</Link>
+          </button>
       </main>
 
       <footer className={styles.footer}>
