@@ -15,7 +15,14 @@ export default function Levels() {
 
   return (
     <div>
+      <a href="/">Go Back Home</a>
       <h1>Level {level}</h1>
+      <button onClick={() => {
+        levelID += 1;
+        setLevel(level - 1);
+      }}>
+        Previous Level!
+      </button>
       <button onClick={() => {
         levelID += 1;
         setLevel(level + 1);
